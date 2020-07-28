@@ -1,0 +1,13 @@
+---
+- name: tasks for 3-tier apps
+  hosts: {{ inventory_hostname }}
+  gather_facts: false
+  become: true
+  
+  tasks:
+    - name: check disk usage
+      command: /usr/bin/df -h
+      register: test_out
+
+    - debug:
+        msg: "{{ test_out.stdout_lines }}"
