@@ -1,6 +1,6 @@
 ---
 - name: tasks for 3-tier apps
-  hosts: {{ inventory_hostname }}
+  hosts: all
   gather_facts: false
   become: true
   
